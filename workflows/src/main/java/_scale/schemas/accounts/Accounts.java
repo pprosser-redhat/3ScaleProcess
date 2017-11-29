@@ -122,7 +122,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "account"
 })
 @XmlRootElement(name = "accounts")
-public class Accounts {
+public class Accounts implements java.io.Serializable{
 
     protected List<Accounts.Account> account;
 
