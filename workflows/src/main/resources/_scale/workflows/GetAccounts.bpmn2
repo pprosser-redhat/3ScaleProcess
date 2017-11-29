@@ -44,6 +44,7 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_79A21AF8-8050-4EBC-B432-10AE3DEF4D14</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
       <bpmn2:ioSpecification id="_rOLeENUYEee2Hpnf2eHSsw">
         <bpmn2:dataInput id="_D67D33C1-97CF-4B7B-BD17-68DABD686B50_TaskNameInputX" drools:dtype="String" itemSubjectRef="__D67D33C1-97CF-4B7B-BD17-68DABD686B50_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="_D67D33C1-97CF-4B7B-BD17-68DABD686B50_MethodInputX" drools:dtype="String" itemSubjectRef="__D67D33C1-97CF-4B7B-BD17-68DABD686B50_MethodInputXItem" name="Method"/>
@@ -52,7 +53,7 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
         <bpmn2:dataInput id="_D67D33C1-97CF-4B7B-BD17-68DABD686B50_UrlInputX" drools:dtype="String" itemSubjectRef="__D67D33C1-97CF-4B7B-BD17-68DABD686B50_UrlInputXItem" name="Url"/>
         <bpmn2:dataInput id="_D67D33C1-97CF-4B7B-BD17-68DABD686B50_ConnectTimeoutInputX" drools:dtype="String" itemSubjectRef="__D67D33C1-97CF-4B7B-BD17-68DABD686B50_ConnectTimeoutInputXItem" name="ConnectTimeout"/>
         <bpmn2:dataInput id="_D67D33C1-97CF-4B7B-BD17-68DABD686B50_ReadTimeoutInputX" drools:dtype="String" itemSubjectRef="__D67D33C1-97CF-4B7B-BD17-68DABD686B50_ReadTimeoutInputXItem" name="ReadTimeout"/>
-        <bpmn2:dataOutput id="_D67D33C1-97CF-4B7B-BD17-68DABD686B50_ResultOutputX" drools:dtype="java.lang.Object" itemSubjectRef="__D67D33C1-97CF-4B7B-BD17-68DABD686B50_ResultOutputXItem" name="Result"/>
+        <bpmn2:dataOutput id="_D67D33C1-97CF-4B7B-BD17-68DABD686B50_ResultOutputX" drools:dtype="java.lang.Object" itemSubjectRef="_api_resultItem" name="Result"/>
         <bpmn2:inputSet id="_rOLeEdUYEee2Hpnf2eHSsw">
           <bpmn2:dataInputRefs>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_MethodInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_PasswordInputX</bpmn2:dataInputRefs>
@@ -75,6 +76,10 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="_rOLeF9UYEee2Hpnf2eHSsw">
         <bpmn2:targetRef>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_MethodInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_rOLeGNUYEee2Hpnf2eHSsw">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_rOLeGdUYEee2Hpnf2eHSsw">GET</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_rOLeGtUYEee2Hpnf2eHSsw">_D67D33C1-97CF-4B7B-BD17-68DABD686B50_MethodInputX</bpmn2:to>
+        </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="_rOLeG9UYEee2Hpnf2eHSsw">
         <bpmn2:targetRef>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_PasswordInputX</bpmn2:targetRef>
@@ -84,6 +89,10 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="_rOLeI9UYEee2Hpnf2eHSsw">
         <bpmn2:targetRef>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_UrlInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_rOLeJNUYEee2Hpnf2eHSsw">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_rOLeJdUYEee2Hpnf2eHSsw">https://3scale-admin.192.168.99.100.xip.io/admin/api/accounts.xml?access_token=#{api_key}</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_rOLeJtUYEee2Hpnf2eHSsw">_D67D33C1-97CF-4B7B-BD17-68DABD686B50_UrlInputX</bpmn2:to>
+        </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="_rOLeJ9UYEee2Hpnf2eHSsw">
         <bpmn2:targetRef>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_ConnectTimeoutInputX</bpmn2:targetRef>
@@ -91,8 +100,32 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
       <bpmn2:dataInputAssociation id="_rOLeK9UYEee2Hpnf2eHSsw">
         <bpmn2:targetRef>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_ReadTimeoutInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
+        <bpmn2:sourceRef>_D67D33C1-97CF-4B7B-BD17-68DABD686B50_ResultOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>api_result</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="_79A21AF8-8050-4EBC-B432-10AE3DEF4D14" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="_D1B4F0D4-130E-4D1E-93D7-7816BED6EE03" targetRef="_D67D33C1-97CF-4B7B-BD17-68DABD686B50"/>
+    <bpmn2:scriptTask id="ScriptTask_1" name="Transform xml" scriptFormat="http://www.java.com/java">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Transform xml]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
+      <bpmn2:script>System.out.println (“The result” “ + api_result);</bpmn2:script>
+    </bpmn2:scriptTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_1" drools:priority="1" sourceRef="_D67D33C1-97CF-4B7B-BD17-68DABD686B50" targetRef="ScriptTask_1"/>
+    <bpmn2:endEvent id="EndEvent_1" name="End">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[End]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_2" drools:priority="1" sourceRef="ScriptTask_1" targetRef="EndEvent_1"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="_rOMFINUYEee2Hpnf2eHSsw">
     <bpmndi:BPMNPlane id="_rOMFIdUYEee2Hpnf2eHSsw" bpmnElement="workflows.GetAccounts">
@@ -112,6 +145,18 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
           <dc:Bounds height="22.0" width="90.0" x="350.0" y="169.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ScriptTask_1" bpmnElement="ScriptTask_1" isExpanded="true">
+        <dc:Bounds height="75.0" width="110.0" x="500.0" y="142.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="11.0" width="58.0" x="526.0" y="174.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="678.0" y="161.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="11.0" width="17.0" x="687.0" y="197.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="_rOMFJdUYEee2Hpnf2eHSsw" bpmnElement="_AEB8EE07-E556-4B25-B573-CD51D16582F8" sourceElement="_rOMFItUYEee2Hpnf2eHSsw" targetElement="_rOMFI9UYEee2Hpnf2eHSsw">
         <di:waypoint xsi:type="dc:Point" x="135.0" y="180.0"/>
         <di:waypoint xsi:type="dc:Point" x="245.0" y="180.0"/>
@@ -120,6 +165,18 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
       <bpmndi:BPMNEdge id="_rOMFJtUYEee2Hpnf2eHSsw" bpmnElement="_79A21AF8-8050-4EBC-B432-10AE3DEF4D14" sourceElement="_rOMFI9UYEee2Hpnf2eHSsw" targetElement="_rOMFJNUYEee2Hpnf2eHSsw">
         <di:waypoint xsi:type="dc:Point" x="245.0" y="180.0"/>
         <di:waypoint xsi:type="dc:Point" x="395.0" y="180.0"/>
+        <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="_rOMFJNUYEee2Hpnf2eHSsw" targetElement="BPMNShape_ScriptTask_1">
+        <di:waypoint xsi:type="dc:Point" x="445.0" y="180.0"/>
+        <di:waypoint xsi:type="dc:Point" x="472.0" y="179.0"/>
+        <di:waypoint xsi:type="dc:Point" x="500.0" y="179.0"/>
+        <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_ScriptTask_1" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="610.0" y="179.0"/>
+        <di:waypoint xsi:type="dc:Point" x="644.0" y="179.0"/>
+        <di:waypoint xsi:type="dc:Point" x="678.0" y="179.0"/>
         <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
