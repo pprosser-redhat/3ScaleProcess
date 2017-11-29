@@ -255,7 +255,7 @@ public class Accounts implements java.io.Serializable{
         "plans",
         "users"
     })
-    public static class Account {
+    public static class Account implements java.io.Serializable {
 
         protected byte id;
         @XmlElement(name = "created_at", required = true)
