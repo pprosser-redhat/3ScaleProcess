@@ -531,7 +531,7 @@ public class Accounts implements java.io.Serializable{
         @XmlType(name = "", propOrder = {
             "plan"
         })
-        public static class Plans java.io.Serializable {
+        public static class Plans implements java.io.Serializable {
 
             protected List<Accounts.Account.Plans.Plan> plan;
 
@@ -610,7 +610,7 @@ public class Accounts implements java.io.Serializable{
                 "trialPeriodDays",
                 "cancellationPeriod"
             })
-            public static class Plan java.io.Serializable {
+            public static class Plan implements java.io.Serializable {
 
                 protected byte id;
                 @XmlElement(required = true)
@@ -964,7 +964,7 @@ public class Accounts implements java.io.Serializable{
         @XmlType(name = "", propOrder = {
             "user"
         })
-        public static class Users java.io.Serializable {
+        public static class Users implements java.io.Serializable {
 
             @XmlElement(required = true)
             protected Accounts.Account.Users.User user;
@@ -1033,7 +1033,7 @@ public class Accounts implements java.io.Serializable{
                 "email",
                 "extraFields"
             })
-            public static class User java.io.Serializable {
+            public static class User implements java.io.Serializable {
 
                 protected byte id;
                 @XmlElement(name = "created_at", required = true)
