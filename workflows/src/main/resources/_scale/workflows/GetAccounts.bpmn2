@@ -105,15 +105,15 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="_79A21AF8-8050-4EBC-B432-10AE3DEF4D14" drools:selectable="true" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="_D1B4F0D4-130E-4D1E-93D7-7816BED6EE03" targetRef="_D67D33C1-97CF-4B7B-BD17-68DABD686B50"/>
-    <bpmn2:scriptTask id="ScriptTask_1" drools:selectable="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="Transform xml" scriptFormat="http://www.java.com/java">
+    <bpmn2:scriptTask id="ScriptTask_1" drools:selectable="true" color:background-color="#fafad2" color:border-color="#000000" color:color="#000000" name="Check Response" scriptFormat="http://www.java.com/java">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Transform xml]]></drools:metaValue>
+          <drools:metaValue><![CDATA[Check Response]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
-      <bpmn2:script>System.out.println (&quot;The result&quot; + api_result);</bpmn2:script>
+      <bpmn2:script>System.out.println (&quot;The result&quot; + ;</bpmn2:script>
     </bpmn2:scriptTask>
     <bpmn2:sequenceFlow id="SequenceFlow_1" drools:selectable="true" drools:priority="1" color:background-color="#000000" color:border-color="#000000" color:color="#000000" sourceRef="_D67D33C1-97CF-4B7B-BD17-68DABD686B50" targetRef="ScriptTask_1"/>
     <bpmn2:endEvent id="EndEvent_1" drools:selectable="true" color:background-color="#ff6347" color:border-color="#000000" color:color="#000000" name="End">
@@ -147,7 +147,7 @@ kcontext.setVariable(&quot;api_key&quot;, api_key);</bpmn2:script>
       <bpmndi:BPMNShape id="_OkZEKNUhEee2Hpnf2eHSsw" bpmnElement="ScriptTask_1">
         <dc:Bounds height="75.0" width="110.0" x="500.0" y="142.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="11.0" width="58.0" x="526.0" y="174.0"/>
+          <dc:Bounds height="11.0" width="69.0" x="520.0" y="174.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_OkZEKdUhEee2Hpnf2eHSsw" bpmnElement="EndEvent_1">
