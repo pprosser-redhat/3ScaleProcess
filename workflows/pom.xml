@@ -8,6 +8,13 @@
   <packaging>kjar</packaging>
   <name>workflows</name>
   <description>Testing out integration with 3Sca;e</description>
+  <dependencies>
+    <dependency>
+      <groupId>API_XML_POJOS</groupId>
+      <artifactId>Scale3Pojos</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <id>guvnor-m2-repo</id>
@@ -23,7 +30,6 @@
         <version>6.5.0.Final-redhat-12</version>
         <extensions>true</extensions>
       </plugin>
-      
     </plugins>
   </build>
 </project>
