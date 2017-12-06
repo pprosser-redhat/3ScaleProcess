@@ -42,7 +42,7 @@
               <bindingIncludes>
                 <include>bindings.xml</include>
               </bindingIncludes>
-              <!--  <generateDirectory>src/main/java</generateDirectory> -->
+              <generateDirectory>src/main/java</generateDirectory>
               <generatePackage>api.schema</generatePackage>
             </configuration>
           </execution>
