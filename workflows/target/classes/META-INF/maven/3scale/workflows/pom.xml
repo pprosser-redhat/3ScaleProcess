@@ -23,6 +23,7 @@
         <version>6.5.0.Final-redhat-12</version>
         <extensions>true</extensions>
       </plugin>
+      
     </plugins>
   </build>
 </project>
