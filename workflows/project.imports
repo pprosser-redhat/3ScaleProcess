@@ -4,6 +4,12 @@
       <import>
         <type>java.lang.Number</type>
       </import>
+      <import>
+        <type>_scale.schemas.accounts.Accounts.Account</type>
+      </import>
+      <import>
+        <type>_scale.schemas.accounts.Accounts</type>
+      </import>
     </imports>
   </imports>
   <version>1.0</version>
