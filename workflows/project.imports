@@ -4,12 +4,6 @@
       <import>
         <type>java.lang.Number</type>
       </import>
-      <import>
-        <type>api.schema.Event</type>
-      </import>
-      <import>
-        <type>api.schema.Account</type>
-      </import>
     </imports>
   </imports>
   <version>1.0</version>
