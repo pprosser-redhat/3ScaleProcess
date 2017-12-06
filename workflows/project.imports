@@ -4,6 +4,15 @@
       <import>
         <type>java.lang.Number</type>
       </import>
+      <import>
+        <type>javax.xml.datatype.XMLGregorianCalendar;</type>
+      </import>
+      <import>
+        <type>javax.xml.datatype.DatatypeConfigurationException</type>
+      </import>
+      <import>
+        <type>javax.xml.datatype.DatatypeFactory</type>
+      </import>
     </imports>
   </imports>
   <version>1.0</version>
