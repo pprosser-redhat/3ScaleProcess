@@ -1,0 +1,100 @@
+
+<form id="681707877">
+<property name="name" value="workflows.AuthoriseAccount-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="0" name="account_createdAt" type="Subform" id="789025383">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;createdAt (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/createdAt"/>
+<property name="fieldClass" value="java.lang.Object"/>
+</field>
+<field position="9" name="api_key" type="InputText" id="695363415">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;api_key (api_key)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="api_key"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="12" name="event_type" type="InputText" id="158061837">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;type (event)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="event/type"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="1" name="account_creditCardStored" type="InputText" id="1962596317">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;creditCardStored (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/creditCardStored"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="11" name="event_object" type="Subform" id="1330388459">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;object (event)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="event/object"/>
+<property name="fieldClass" value="java.lang.Object"/>
+</field>
+<field position="7" name="account_updatedAt" type="Subform" id="11689563">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;updatedAt (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/updatedAt"/>
+<property name="fieldClass" value="java.lang.Object"/>
+</field>
+<field position="10" name="event_action" type="InputText" id="782622804">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;action (event)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="event/action"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="3" name="account_id" type="InputTextPrimitiveByte" id="1925174729">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;id (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/id"/>
+<property name="fieldClass" value="byte"/>
+</field>
+<field position="8" name="account_users" type="Subform" id="2072899899">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;users (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/users"/>
+<property name="fieldClass" value="java.lang.Object"/>
+</field>
+<field position="2" name="account_extraFields" type="InputText" id="338090750">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;extraFields (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/extraFields"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="5" name="account_plans" type="Subform" id="337184865">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;plans (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/plans"/>
+<property name="fieldClass" value="java.lang.Object"/>
+</field>
+<field position="6" name="account_state" type="InputText" id="1216673533">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;state (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/state"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<field position="4" name="account_orgName" type="InputText" id="1697120025">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;orgName (account)quot;"/>
+<property name="readonly" value="false"/>
+<property name="outputBinding" value="account/orgName"/>
+<property name="fieldClass" value="java.lang.String"/>
+</field>
+<dataHolder supportedType="className" inputId="" name="#BBBBBB" type="dataModelerEntry" outId="account" value="api.schema.Account" id="account"/>
+<dataHolder inputId="" name="#E9E371" type="basicType" outId="api_key" value="java.lang.String" id="api_key"/>
+<dataHolder supportedType="className" inputId="" name="#FF54A7" type="dataModelerEntry" outId="event" value="api.schema.Event" id="event"/>
+</form>
