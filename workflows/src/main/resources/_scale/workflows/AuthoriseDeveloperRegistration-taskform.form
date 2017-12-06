@@ -1,7 +1,0 @@
-
-<form id="1302028554">
-<property name="name" value="AuthoriseDeveloperRegistration-taskform.form"/>
-<property name="displayMode" value="default"/>
-<property name="status" value="0"/>
-<dataHolder supportedType="className" inputId="accounts" name="#BBBBBB" type="dataModelerEntry" outId="" value="api.schema.Accounts" id="accounts"/>
-</form>
