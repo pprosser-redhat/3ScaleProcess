@@ -23,6 +23,31 @@
         <version>6.5.0.Final-redhat-12</version>
         <extensions>true</extensions>
       </plugin>
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.12.3</version>
+        <executions>
+          <execution>
+            <id>add-source-for-demoapp</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>src/main/xsd</schemaDirectory>
+              <schemaIncludes>
+                <include>Accounts.xsd</include>
+              </schemaIncludes>
+              <bindingDirectory>src/main/bindings</bindingDirectory>
+              <bindingIncludes>
+                <include>bindings.xml</include>
+              </bindingIncludes>
+              <!--  <generateDirectory>src/main/java</generateDirectory> -->
+              <generatePackage>api.schema</generatePackage>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
