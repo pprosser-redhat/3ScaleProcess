@@ -21,7 +21,8 @@
 						<configuration>
 							<schemaDirectory>src/main/xsd</schemaDirectory>
 							<schemaIncludes>
-								<include>Accounts.xsd</include>
+								<!--    <include>Accounts.xsd</include>-->
+							  	<include>Event.xsd</include>
 							</schemaIncludes>
 							<bindingDirectory>src/main/bindings</bindingDirectory>
 							<bindingIncludes>
