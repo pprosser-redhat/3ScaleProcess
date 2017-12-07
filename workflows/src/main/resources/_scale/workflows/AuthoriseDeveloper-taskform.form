@@ -3,13 +3,6 @@
 <property name="name" value="AuthoriseDeveloper-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="2" name="pEvent_type" type="InputText" id="532808600">
-<property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;type (pEvent)quot;"/>
-<property name="readonly" value="false"/>
-<property name="inputBinding" value="event/type"/>
-<property name="fieldClass" value="java.lang.String"/>
-</field>
 <field position="0" name="pEvent_action" type="InputText" id="1307553825">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;enquot;,quot;action (pEvent)quot;"/>
@@ -17,12 +10,12 @@
 <property name="inputBinding" value="event/action"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="1" name="pEvent_object" type="Subform" id="1067913897">
+<field position="1" name="pEvent_type" type="InputText" id="532808600">
 <property name="fieldRequired" value="false"/>
-<property name="label" value="quot;enquot;,quot;object (pEvent)quot;"/>
+<property name="label" value="quot;enquot;,quot;type (pEvent)quot;"/>
 <property name="readonly" value="false"/>
-<property name="inputBinding" value="event/object"/>
-<property name="fieldClass" value="java.lang.Object"/>
+<property name="inputBinding" value="event/type"/>
+<property name="fieldClass" value="java.lang.String"/>
 </field>
 <dataHolder supportedType="className" inputId="event" name="#FF54A7" type="dataModelerEntry" outId="" value="api.schema.Event" id="pEvent"/>
 </form>
