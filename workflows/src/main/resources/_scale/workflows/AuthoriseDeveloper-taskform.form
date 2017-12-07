@@ -3,21 +3,23 @@
 <property name="name" value="AuthoriseDeveloper-taskform.form"/>
 <property name="displayMode" value="default"/>
 <property name="status" value="0"/>
-<field position="0" name="pEvent_action" type="InputText" id="1307553825">
+<field position="1" name="pEvent_action" type="InputText" id="1307553825">
 <property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
 <property name="label" value="quot;enquot;,quot;action (pEvent)quot;"/>
 <property name="readonly" value="false"/>
 <property name="inputBinding" value="event/action"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="1" name="pEvent_type" type="InputText" id="532808600">
+<field position="0" name="pEvent_type" type="InputText" id="532808600">
 <property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="false"/>
 <property name="label" value="quot;enquot;,quot;type (pEvent)quot;"/>
 <property name="readonly" value="false"/>
 <property name="inputBinding" value="event/type"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="2" name="1558509793" type="InputText" id="1558509793">
+<field position="3" name="1558509793" type="InputText" id="1558509793">
 <property name="fieldRequired" value="false"/>
 <property name="label" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Organisationquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
@@ -28,8 +30,9 @@
 <property name="inputBinding" value="event/object/account/orgName"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="3" name="createdat" type="InputText" id="876885045">
+<field position="4" name="createdat" type="InputText" id="876885045">
 <property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="true"/>
 <property name="label" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Created atquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
@@ -39,8 +42,9 @@
 <property name="inputBinding" value="event/object/account/createdAt"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="4" name="accountid" type="InputTextByte" id="1266391389">
+<field position="6" name="accountid" type="InputTextByte" id="1266391389">
 <property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="false"/>
 <property name="label" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Account Idquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
@@ -48,9 +52,10 @@
 <property name="inputBinding" value="event/object/account/id"/>
 <property name="fieldClass" value="java.lang.Byte"/>
 </field>
-<field position="5" name="826861723" type="InputText" id="826861723">
+<field position="7" name="826861723" type="InputText" id="826861723">
 <property name="fieldRequired" value="false"/>
-<property name="label" value="quot;SSClassquot;,quot;quot;quot;SSStylequot;,quot;quot;quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Rolequot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="groupWithPrevious" value="true"/>
+<property name="label" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Rolequot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="readonly" value="false"/>
@@ -59,11 +64,16 @@
 <property name="inputBinding" value="event/object/account/users/user/role"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
-<field position="6" name=":decorator_0" type="HTMLLabel" id="575532184">
+<field position="2" name=":decorator_0" type="Separator" id="267826002">
+<property name="fieldRequired" value="false"/>
+<property name="groupWithPrevious" value="false"/>
+<property name="readonly" value="false"/>
+<property name="fieldClass" value="Separator"/>
+</field>
+<field position="5" name=":decorator_1" type="Separator" id="1623298238">
 <property name="fieldRequired" value="false"/>
 <property name="readonly" value="false"/>
-<property name="htmlContent" value="quot;caquot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;quot;dequot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;quot;enquot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;quot;esquot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;quot;frquot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;quot;jaquot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;quot;ptquot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;quot;zhquot;,quot;&lt;p&gt;HTML&lt;/p&gt; quot;"/>
-<property name="fieldClass" value="HTMLlabel"/>
+<property name="fieldClass" value="Separator"/>
 </field>
 <dataHolder supportedType="className" inputId="event" name="#FF54A7" type="dataModelerEntry" outId="" value="api.schema.Event" id="pEvent"/>
 </form>
