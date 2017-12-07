@@ -59,5 +59,19 @@
 <property name="inputBinding" value="event/object/account/user/role"/>
 <property name="fieldClass" value="java.lang.String"/>
 </field>
+<field position="6" name=":decorator_0" type="HTMLLabel" id="575532184">
+<property name="fieldRequired" value="false"/>
+<property name="readonly" value="false"/>
+<property name="htmlContent" value="quot;caquot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;quot;dequot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;quot;enquot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;quot;esquot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;quot;frquot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;quot;jaquot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;quot;ptquot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;quot;zhquot;,quot;&lt;p&gt;HTML&lt;/p&gt;
+quot;"/>
+<property name="fieldClass" value="HTMLlabel"/>
+</field>
 <dataHolder supportedType="className" inputId="event" name="#FF54A7" type="dataModelerEntry" outId="" value="api.schema.Event" id="pEvent"/>
 </form>
