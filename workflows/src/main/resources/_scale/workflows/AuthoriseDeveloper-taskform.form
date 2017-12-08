@@ -37,10 +37,10 @@
 <field position="3" name="1463650744" type="InputTextShort" id="1463650744">
 <property name="fieldRequired" value="false"/>
 <property name="groupWithPrevious" value="false"/>
-<property name="label" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Account Statusquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="label" value="quot;SSClassquot;,quot;quot;quot;SSStylequot;,quot;quot;quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Account Statusquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
-<property name="readonly" value="false"/>
+<property name="readonly" value="true"/>
 <property name="inputBinding" value="event/object/account/users/user/state"/>
 <property name="fieldClass" value="java.lang.Short"/>
 </field>
@@ -158,20 +158,12 @@
 <field position="16" name=":decorator_6" type="HTMLLabel" id="538125832">
 <property name="fieldRequired" value="false"/>
 <property name="readonly" value="false"/>
-<property name="htmlContent" value="quot;caquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;quot;dequot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;quot;enquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;quot;esquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;quot;frquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;quot;jaquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;quot;ptquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;quot;zhquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt;
-quot;"/>
+<property name="htmlContent" value="quot;caquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;quot;dequot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;quot;enquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;quot;esquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;quot;frquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;quot;jaquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;quot;ptquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;quot;zhquot;,quot;&lt;h3&gt;&lt;big&gt;&lt;strong&gt;Authorisation?&lt;/strong&gt;&lt;/big&gt;&lt;/h3&gt; quot;"/>
 <property name="fieldClass" value="HTMLlabel"/>
 </field>
 <field position="17" name="pAuthorised" type="CheckBox" id="906589994">
 <property name="fieldRequired" value="false"/>
-<property name="label" value="quot;SSClassquot;,quot;quot;quot;SSStylequot;,quot;quot;quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Check the box to authorise the accountquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
+<property name="label" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;Check the box to authorise the accountquot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="errorMessage" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="title" value="quot;caquot;,quot;quot;quot;dequot;,quot;quot;quot;enquot;,quot;quot;quot;esquot;,quot;quot;quot;frquot;,quot;quot;quot;jaquot;,quot;quot;quot;ptquot;,quot;quot;quot;zhquot;,quot;quot;"/>
 <property name="readonly" value="false"/>
