@@ -55,7 +55,7 @@
                             <setHeader headerName="CamelHttpMethod" id="_SetPOSTtoBPM">
                                 <constant>POST</constant>
                             </setHeader>
-                            <to id="_to1" uri="http4:rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io:80/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername=erics&amp;authPassword=bpmsuite1!&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/>
+                            <to id="_to1" uri="http4:rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io:80/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername=bpmsAdmin&amp;authPassword=welcome1&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/>
                         </when>
                         <when id="_when2">
                             <xpath>/event/type/text() = 'application'</xpath>
