@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <!-- You could also define a traditional camel context here -->
+    <bean
+        class="org.apache.camel.component.servlet.CamelHttpTransportServlet" id="camelHttpTransportServlet"/>
+    <bean
+        class="org.springframework.boot.web.servlet.ServletRegistrationBean" id="servlet">
+        <property name="name" value="CamelServlet"/>
+        <property name="servlet" ref="camelHttpTransportServlet"/>
+        <property name="urlMappings" value="/integration/*"/>
+    </bean>
+    <bean class="scale.sync.TransformAccountPayload" id="transAccountPayload"/>
+    <bean
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="bean-ced1ce90-6cd4-4769-a3e2-120d1c782ba3"/>
+    <camelContext id="camelContext-4173a8f8-0d9a-4b3c-ae17-fd8f4bbaaa4a" xmlns="http://camel.apache.org/schema/spring">
+        <dataFormats>
+            <jaxb contextPath="api.schema" id="apievent"
+                ignoreJAXBElement="false" mustBeJAXBElement="false"
+                objectFactory="false" prettyPrint="false"/>
+        </dataFormats>
+        <restConfiguration apiContextPath="api-docs" component="servlet" contextPath="/demos">
+            <apiProperty key="cors" value="true"/>
+            <apiProperty key="api.title" value="Process Webhook Events from 3Scale"/>
+            <apiProperty key="api.version" value="1.0.0"/>
+        </restConfiguration>
+        <rest path="/sync">
+            <!--  <post apiDocs="true" bindingMode="auto"
+                type="api.schema.Event" uri="/scale">
+                <to uri="direct:sync"/>
+            </post> -->
+            <post apiDocs="true" uri="/scale">
+                <to uri="direct:sync"/>
+            </post>
+        </rest>
+        <route id="APMWebHook" trace="true">
+            <from id="_sync" uri="direct:sync">
+                <description>Process 3Scale Events</description>
+            </from>
+            <choice id="CheckEventType">
+                <when id="_ApplicationCreated">
+                    <xpath>/event/action/text() = 'created'</xpath>
+                    <choice id="_choice1">
+                        <when id="_when1">
+                            <xpath>/event/type/text() = 'account'</xpath>
+                            <!--   <to id="_to1" uri="http4:localhost:8180/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername=bpmsAdmin&amp;authPassword=welcome1&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/> -->
+                            <log id="_log2" message="Account created ${body}"/>
+                            <setHeader headerName="CamelJBPMProcessId" id="AuthoriseAccount">
+                                <constant>workflows.AuthoriseAccount</constant>
+                            </setHeader>
+                            <process id="TransformPayloadAccount" ref="transAccountPayload"/>
+                            <setHeader headerName="Exchange.HTTP_QUERY" id="_SetAccountasParameter">
+                                <simple trim="false">map_pInBoundAccount=${body}</simple>
+                            </setHeader>
+                            <setHeader headerName="CamelHttpMethod" id="_SetPOSTtoBPM">
+                                <constant>POST</constant>
+                            </setHeader>
+                            <to id="_to1" uri="http4:rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io:80/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername=erics&amp;authPassword=bpmsuite1!&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/>
+                        </when>
+                        <when id="_when2">
+                            <xpath>/event/type/text() = 'application'</xpath>
+                            <!--    <process id="TransformPayloadApplication" ref="test"/> -->
+                            <setHeader headerName="processId" id="AuthoriseApplication">
+                                <constant>workflows.AuthoriseApplication</constant>
+                            </setHeader>
+                            <!--   <to id="ApplicationAuthorisation" uri="jbpm:http://localhost:8080/business-central?userName=bpmsAdmin&amp;password=welcome1&amp;deploymentId=3scale:workflows:1.0"/> -->
+                        </when>
+                        <when id="_when3">
+                            <xpath>/event/type/text() = 'user'</xpath>
+                            <!--   <process id="TransformPayloadUser" ref="test"/> -->
+                            <setHeader headerName="processId" id="AuthoriseUser">
+                                <constant>workflows.AuthoriseUser</constant>
+                            </setHeader>
+                            <!--     <to id="UserAuthorisation" uri="jbpm:http://localhost:8080/business-central?userName=bpmsAdmin&amp;password=welcome1&amp;deploymentId=3scale:workflows:1.0"/> -->
+                        </when>
+                        <otherwise id="_otherwise2">
+                            <log id="_log1" message="The body received $body"/>
+                        </otherwise>
+                    </choice>
+                </when>
+                <otherwise id="_otherwise1">
+                    <log id="_log3" message="Output failed ${body}"/>
+                </otherwise>
+            </choice>
+        </route>
+    </camelContext>
+</beans>
