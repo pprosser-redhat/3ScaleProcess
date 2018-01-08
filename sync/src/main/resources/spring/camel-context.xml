@@ -25,10 +25,7 @@
             <apiProperty key="api.version" value="1.0.0"/>
         </restConfiguration>
         <rest path="/sync">
-            <!--  <post apiDocs="true" bindingMode="auto"
-                type="api.schema.Event" uri="/scale">
-                <to uri="direct:sync"/>
-            </post> -->
+            
             <post apiDocs="true" uri="/scale">
                 <to uri="direct:sync"/>
             </post>
@@ -43,7 +40,7 @@
                     <choice id="_choice1">
                         <when id="_when1">
                             <xpath>/event/type/text() = 'account'</xpath>
-                            <!--   <to id="_to1" uri="http4:localhost:8180/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername=bpmsAdmin&amp;authPassword=welcome1&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/> -->
+                    
                             <log id="_log2" message="Account created ${body}"/>
                             <setHeader headerName="CamelJBPMProcessId" id="AuthoriseAccount">
                                 <constant>workflows.AuthoriseAccount</constant>
@@ -59,15 +56,15 @@
                         </when>
                         <when id="_when2">
                             <xpath>/event/type/text() = 'application'</xpath>
-                            <!--    <process id="TransformPayloadApplication" ref="test"/> -->
+                            
                             <setHeader headerName="processId" id="AuthoriseApplication">
                                 <constant>workflows.AuthoriseApplication</constant>
                             </setHeader>
-                            <!--   <to id="ApplicationAuthorisation" uri="jbpm:http://localhost:8080/business-central?userName=bpmsAdmin&amp;password=welcome1&amp;deploymentId=3scale:workflows:1.0"/> -->
+                           
                         </when>
                         <when id="_when3">
                             <xpath>/event/type/text() = 'user'</xpath>
-                            <!--   <process id="TransformPayloadUser" ref="test"/> -->
+                            
                             <setHeader headerName="processId" id="AuthoriseUser">
                                 <constant>workflows.AuthoriseUser</constant>
                             </setHeader>

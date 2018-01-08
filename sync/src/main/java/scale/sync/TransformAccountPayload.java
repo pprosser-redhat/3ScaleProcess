@@ -10,7 +10,7 @@ public class TransformAccountPayload implements Processor{
 	@Override
 	public void process(Exchange exchange) throws Exception {
 
-		//Rest Position in Stream as already ready in route
+		//Reset Position in Stream as already read in route with xpath
 		
 		MessageHelper.resetStreamCache(exchange.getIn());
 		
