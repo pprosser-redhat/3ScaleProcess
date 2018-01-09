@@ -50,7 +50,7 @@ To enable the the Fuse application to read the config map, a view policy needs t
 
 	$ oc policy add-role-to-user view --serviceaccount=default
 
-## Username and password fpr bpm
+## Username and password for bpm
 
 The Camel Route is expecting the bpm user name and password to be made available as Openshift secrets.
 
@@ -72,6 +72,10 @@ To load the secret into Openshift, login in using the commnad line tool "oc", an
 
 	$ oc login https:<ipaddress>:<port>
 	$ oc create -f <filename.yml>
+	
+Having created the secrets, update the deployment configuration to mount the secrets into:
+
+	/etc/secrets 
 	
 
 
