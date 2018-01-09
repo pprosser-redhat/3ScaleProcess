@@ -18,5 +18,5 @@ bpm:
   hostname: localhost
   port: 8081
   username: bpmsAdmin
-  password: welcome1
+  password: test
   
