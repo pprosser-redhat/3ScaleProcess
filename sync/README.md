@@ -14,7 +14,7 @@ The Camel route using 4 custom properties that need to be changed before using,
 
 these can be changed in application.yml, or via a config map on Openshift 
 
-The 3 properties are :
+The 4 properties are :
 
 	bpm.hostname
 	bpm.port
@@ -29,6 +29,30 @@ The example can then be built and deployed using a single goal:
 
 or
 
-by using a Fuse integration services template and using S2I by placing the projec in a Git repo
+by using a Fuse integration services template and using S2I by placing the project in a Git repo and a config map to define the properties. Below is a sample configmap :-
+
+	apiVersion: v1
+	kind: ConfigMap
+	metadata:
+		name: bpm-config
+		namespace: accountapprovals
+		selfLink: /api/v1/namespaces/accountapprovals/configmaps/bpm-config
+		uid: ca120cce-f54f-11e7-9096-080027b8f3eb
+		resourceVersion: '458753'
+		creationTimestamp: '2018-01-09T15:14:29Z'
+	data:
+		bpm.hostname: rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io
+		bpm.password: welcome1
+		bpm.port: '80'
+		bpm.username: bpmsAdmin
+
+To enable the the Fuse application to read the config map, a view policy needs to be applied to the openshift project, this can be acheived through the Openshift console or by running the following command:-
+
+	$ oc policy add-role-to-user view --serviceaccount=default
+
+
+
+
+
 
 
