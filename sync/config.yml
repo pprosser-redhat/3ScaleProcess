@@ -5,5 +5,4 @@ metadata:
 data:
   bpm.hostname: rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io
   bpm.port: 80
-  bpm.username: test
-  bpm.password: test
+  
