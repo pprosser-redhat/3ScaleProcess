@@ -1,7 +1,7 @@
 camel:
   springboot:
     # The Camel context name
-    name: 3Scale_RHSSO_Integration
+    name: bpm-config
 
 # Binding health checks to a different port
 management:
@@ -13,19 +13,8 @@ endpoints:
   health:
     enabled: true
 
-spring:
-  # Spring JDBC configuration
-  datasource:
-    # Let Spring Boot auto-configure an embedded HSQL database
-    url:
 
-# The application configuration properties
-quickstart:
-  generateOrderPeriod: 2s
-  processOrderPeriod: 5s
-  
-sso:
-  SSO_HOST: secure-sso-sso-app-demo.192.168.99.100.nip.io
-  SSO_PORT: 443
-  REALM: 3Scale
+bpm:
+  hostname: localhost
+  port: 8180
   

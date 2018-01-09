@@ -5,8 +5,7 @@
   <groupId>3scale</groupId>
   <artifactId>sync</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Fabric8 :: Quickstarts :: Spring-Boot :: Camel REST / SQL</name>
-  <description>Spring Boot example running a Camel REST route connecting to a SQL database</description>
+  <name>Fabric8 :: 3Scale :: Spring-Boot :: Camel webhook for 3Scale</name>
   <properties>
     <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
     <fabric8.version>2.2.170.redhat-000013</fabric8.version>
@@ -75,10 +74,6 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-http4-starter</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-jaxb-starter</artifactId>
-    </dependency>
   </dependencies>
   <build>
     <defaultGoal>spring-boot:run</defaultGoal>
@@ -127,4 +122,5 @@
       </plugin>
     </plugins>
   </build>
+  <description>A Camel Spring boot app that receives webhook events from 3Scale and starts a BPM process for Account approval</description>
 </project>

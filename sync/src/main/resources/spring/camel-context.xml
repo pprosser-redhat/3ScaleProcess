@@ -13,19 +13,16 @@
     <bean class="scale.sync.TransformAccountPayload" id="transAccountPayload"/>
     <bean
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="bean-ced1ce90-6cd4-4769-a3e2-120d1c782ba3"/>
+       
     <camelContext id="camelContext-4173a8f8-0d9a-4b3c-ae17-fd8f4bbaaa4a" xmlns="http://camel.apache.org/schema/spring">
-        <dataFormats>
-            <jaxb contextPath="api.schema" id="apievent"
-                ignoreJAXBElement="false" mustBeJAXBElement="false"
-                objectFactory="false" prettyPrint="false"/>
-        </dataFormats>
+        <!-- <endpoint id="accountprocess" uri="http4:localhost:8180/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername=bpmsAdmin&amp;authPassword=welcome1&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/> -->
+        <endpoint id="accountprocess" uri="http4:{{bpm.hostname}}:{{bpm.port}}/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername={{bpm.username}}&amp;authPassword={{bpm.password}}&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/>
         <restConfiguration apiContextPath="api-docs" component="servlet" contextPath="/demos">
             <apiProperty key="cors" value="true"/>
             <apiProperty key="api.title" value="Process Webhook Events from 3Scale"/>
             <apiProperty key="api.version" value="1.0.0"/>
         </restConfiguration>
         <rest path="/sync">
-            
             <post apiDocs="true" uri="/scale">
                 <to uri="direct:sync"/>
             </post>
@@ -40,7 +37,7 @@
                     <choice id="_choice1">
                         <when id="_when1">
                             <xpath>/event/type/text() = 'account'</xpath>
-                    
+                         
                             <log id="_log2" message="Account created ${body}"/>
                             <setHeader headerName="CamelJBPMProcessId" id="AuthoriseAccount">
                                 <constant>workflows.AuthoriseAccount</constant>
@@ -52,19 +49,16 @@
                             <setHeader headerName="CamelHttpMethod" id="_SetPOSTtoBPM">
                                 <constant>POST</constant>
                             </setHeader>
-                            <to id="_to1" uri="http4:rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io:80/business-central/rest/runtime/3scale:workflows:1.0/process/workflows.AuthoriseAccount/start?authUsername=bpmsAdmin&amp;authPassword=welcome1&amp;authenticationPreemptive=true&amp;bridgeEndpoint=true&amp;synchronous=true"/>
+                            <to id="_to1" ref="accountprocess"/>
                         </when>
                         <when id="_when2">
                             <xpath>/event/type/text() = 'application'</xpath>
-                            
                             <setHeader headerName="processId" id="AuthoriseApplication">
                                 <constant>workflows.AuthoriseApplication</constant>
                             </setHeader>
-                           
                         </when>
                         <when id="_when3">
                             <xpath>/event/type/text() = 'user'</xpath>
-                            
                             <setHeader headerName="processId" id="AuthoriseUser">
                                 <constant>workflows.AuthoriseUser</constant>
                             </setHeader>

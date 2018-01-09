@@ -1,0 +1,7 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: bpm-config
+data:
+  bpm.hostname=rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io
+  bpm.port=80
