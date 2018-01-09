@@ -74,6 +74,10 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-http4-starter</artifactId>
     </dependency>
+    <dependency>
+    	<groupId>io.fabric8</groupId>
+    	<artifactId>spring-cloud-kubernetes-core</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <defaultGoal>spring-boot:run</defaultGoal>
