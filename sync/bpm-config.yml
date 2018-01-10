@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bpm-config
+data:
+  amp.hostname: system-provider.amp.svc
+  amp.http: http
+  amp.port: '3000'
+  bpm.hostname: rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io
+  bpm.organisation: 3scale
+  bpm.port: '80'
