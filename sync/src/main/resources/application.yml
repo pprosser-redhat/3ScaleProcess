@@ -19,7 +19,7 @@ bpm:
   username: bpmsAdmin
   password: welcome1
   
-apm:
+amp:
   key: 809186e5d04162c5d2a3ab50ea7172d77591cc893311e77e404307f8183d1a42
   http: https
   hostname: 3scale-admin.192.168.99.100.xip.io
