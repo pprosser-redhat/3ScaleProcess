@@ -41,7 +41,7 @@
                             </setHeader>
                             <process id="TransformPayloadAccount" ref="transAccountPayload"/>
                             <setHeader headerName="Exchange.HTTP_QUERY" id="_SetAccountasParameter">
-                                <simple trim="false">map_pInBoundAccount=${body}&amp;map_papi_key={{api.key}}</simple>
+                                <simple trim="false">map_pInBoundAccount=${body}&amp;map_papi_key={{apm.key}}&amp;map_papi_http={{amp.http}}&amp;map_papi_hostname={{amp.hostname}}&amp;map_papi_port={{amp.port}}</simple>
                             </setHeader>
                             <setHeader headerName="CamelHttpMethod" id="_SetPOSTtoBPM">
                                 <constant>POST</constant>
