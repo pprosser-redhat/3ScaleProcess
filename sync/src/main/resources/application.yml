@@ -13,10 +13,12 @@ endpoints:
   health:
     enabled: true
 
-#  hostname: rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io
 bpm:
   hostname: localhost
   port: 8081
   username: bpmsAdmin
-  password: test
+  password: welcome1
+  
+api:
+  key: 809186e5d04162c5d2a3ab50ea7172d77591cc893311e77e404307f8183d1a42
   
