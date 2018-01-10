@@ -18,6 +18,7 @@ bpm:
   port: 8081
   username: bpmsAdmin
   password: welcome1
+  organisation: 3scale
   
 amp:
   key: 809186e5d04162c5d2a3ab50ea7172d77591cc893311e77e404307f8183d1a42

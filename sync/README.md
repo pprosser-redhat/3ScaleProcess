@@ -10,16 +10,39 @@ The project can be built with
 
 ### Running the example in OpenShift
 
-The Camel route using 4 custom properties that need to be changed before using,
+The Camel route using 8 custom properties that need to be changed before using,
 
 these can be changed in application.yml, or via a config map on Openshift 
 
-The 4 properties are :
+The 8 properties are :
 
-	bpm.hostname
+	bpm.hostname (can use either the OCP route or service)
 	bpm.port
 	bpm.username
 	bpm.password
+	bpm.organisation
+	amp.http
+	amp.hostname    (if using AMP on OCP then as a demo, it's recommended to use the Openshift service name - this will avoid needing to configure truststore for self signed keys
+	amp.port
+
+Here is an example configmap :-
+
+	apiVersion: v1
+		kind: ConfigMap
+	metadata:
+		name: bpm-config
+		namespace: accountapprovals
+		selfLink: /api/v1/namespaces/accountapprovals/configmaps/bpm-config
+		uid: ca120cce-f54f-11e7-9096-080027b8f3eb
+		resourceVersion: '477687'
+		creationTimestamp: '2018-01-09T15:14:29Z'
+	data:
+		amp.hostname: system-provider.amp.svc
+		amp.http: http
+		amp.port: '3000'
+		bpm.hostname: rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io
+		bpm.organisation: 3scale
+		bpm.port: '80'
 
 The properties need to be changed to reflect your environment
 
@@ -29,22 +52,9 @@ The example can then be built and deployed using a single goal:
 
 or
 
-by using a Fuse integration services template and using S2I by placing the project in a Git repo and a config map to define the properties. Below is a sample configmap :-
+by using a Fuse integration services template and using S2I by placing the project in a Git repo and creating a config map to define the properties. Below is a sample configmap :-
 
-	apiVersion: v1
-	kind: ConfigMap
-	metadata:
-		name: bpm-config
-		namespace: accountapprovals
-		selfLink: /api/v1/namespaces/accountapprovals/configmaps/bpm-config
-		uid: ca120cce-f54f-11e7-9096-080027b8f3eb
-		resourceVersion: '458753'
-		creationTimestamp: '2018-01-09T15:14:29Z'
-	data:
-		bpm.hostname: rhcs-bpms-install-demo-accountapprovals.192.168.99.100.nip.io
-		bpm.password: welcome1
-		bpm.port: '80'
-		bpm.username: bpmsAdmin
+Note - create the config map first, otherwise the default values will be used from the project
 
 To enable the the Fuse application to read the config map, a view policy needs to be applied to the openshift project, this can be acheived through the Openshift console or by running the following command:-
 
@@ -52,7 +62,11 @@ To enable the the Fuse application to read the config map, a view policy needs t
 
 ## Username and password for bpm
 
-The Camel Route is expecting the bpm user name and password to be made available as Openshift secrets.
+The Camel Route is expecting the bpm user name, andpassword to be made available as Openshift secrets (you can also just but them in the config map).
+
+The API token is also passed as a secret (this token is required by all calls to the 3Scale AMP backend) - you need to generate this in your own 3Scale environment, and place it in the secret.
+
+To generate the token, see the 3Scale documentation - https://access.redhat.com/documentation/en-us/red_hat_3scale/2.1/html/accounts/tokens
 
 An example secret yaml file is provided below :
 
@@ -65,8 +79,9 @@ An example secret yaml file is provided below :
 	stringData:
 		bpm.username: test
 		bpm.password: test
-
-Passing the data as stringData will encode the username and password into the data structure when loaded
+        amp.key: 809186e5d04162c5d2a3ab50ea7172d77591cc893311e77e404307f8183d1a42
+        
+Passing the data as stringData will encode the username, password and API Key into the data structure when loaded
 
 To load the secret into Openshift, login in using the commnad line tool "oc", and then using the oc create command to load the file (make sure you are in the right project)
 
