@@ -125,12 +125,12 @@
   <activeProfiles>
     <activeProfile>fuse.repos</activeProfile>
   </activeProfiles>
-<mirrors>
+<!-- <mirrors>
    <mirror>
      <id>internal-repository</id>
      <name>Maven Repository Manager running on repo.mycompany.com</name>
      <url>${MAVEN_MIRROR_URL}</url>
      <mirrorOf>*</mirrorOf>
    </mirror>
- </mirrors>
+ </mirrors> -->
 </settings>
