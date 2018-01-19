@@ -55,7 +55,7 @@
  
         
         <repository>
-          <id>redhatea</id>
+          <id>redhat-ea</id>
           <name>Red Hat Early Access Repository</name>
           <url>https://maven.repository.redhat.com/earlyaccess/all</url>
           <snapshots>
